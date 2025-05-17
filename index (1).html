@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>COVID Prediction</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+  <div class="login">
+    <h1>COVID Prediction</h1>
+
+    <!-- Main Input for Receiving Query to our ML -->
+    <form action="{{ url_for('predict') }}" method="post">
+      <input type="text" name="time_bp" placeholder="Time BP" required="required" />
+      <input type="text" name="time_dp" placeholder="Time DP" required="required" />
+      <input type="text" name="travel_time" placeholder="Travel Time" required="required" />
+      <input type="text" name="easeof_online" placeholder="Ease of Online" required="required" />
+      <input type="text" name="home_env" placeholder="Home Environment" required="required" />
+      <input type="text" name="prod_inc" placeholder="Productivity Increase" required="required" />
+      <input type="text" name="sleep_bal" placeholder="Sleep Balance" required="required" />
+      <input type="text" name="new_skill" placeholder="New Skill" required="required" />
+      <input type="text" name="fam_connect" placeholder="Family Connection" required="required" />
+      <input type="text" name="relaxed" placeholder="Relaxed" required="required" />
+      <input type="text" name="self_time" placeholder="Self Time" required="required" />
+      <input type="text" name="like_hw" placeholder="Like Homework" required="required" />
+      <input type="text" name="dislike_hw" placeholder="Dislike Homework" required="required" />
+      <input type="text" name="time_bp.1" placeholder="Time BP 1" required="required" />
+      <input type="text" name="age_18.0" placeholder="Age 18.0" required="required" />
+      <input type="text" name="age_22.0" placeholder="Age 22.0" required="required" />
+      <input type="text" name="age_29.0" placeholder="Age 29.0" required="required" />
+      <input type="text" name="age_36.5" placeholder="Age 36.5" required="required" />
+      <input type="text" name="age_45.0" placeholder="Age 45.0" required="required" />
+      <input type="text" name="age_55.0" placeholder="Age 55.0" required="required" />
+      <input type="text" name="age_65.0" placeholder="Age 65.0" required="required" />
+      <input type="text" name="gender_Female" placeholder="Gender Female" required="required" />
+      <input type="text" name="gender_Male" placeholder="Gender Male" required="required" />
+      <input type="text" name="occupation_Entrepreneur" placeholder="Occupation Entrepreneur" required="required" />
+      <input type="text" name="occupation_Working Professional" placeholder="Occupation Working Professional" required="required" />
+      <input type="text" name="prefer_Complete Physical Attendance" placeholder="Prefer Complete Physical Attendance" required="required" />
+      <input type="text" name="prefer_Work/study from home" placeholder="Prefer Work/Study from Home" required="required" />
+      
+      <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+    <br><br>
+    <h2>Prediction Result:</h2>
+    <p>{{ prediction_text }}</p>
+
+  </div>
+</body>
+</html>
